@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import Listify
 
-# Register your models here.
+class ListifyAdmin(admin.ModelAdmin):
+    readonly_fields = ('created',)
+
+admin.site.register(Listify, ListifyAdmin)
+ 

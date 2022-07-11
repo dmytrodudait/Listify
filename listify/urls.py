@@ -25,12 +25,15 @@ urlpatterns = [
     path('signup/', views.signupuser, name='signupuser'), 
     path('login/', views.loginuser, name='loginuser'), 
     path('logout/', views.logoutuser, name='logoutuser'), 
-    
-    
-    
+           
     #Listify 
     path('', views.home, name='home'),
-    path('current/', views.currentlists, name='currentlists'),   
-    
+    path('create/', views.createnote, name='createnote'),  
+    path('current/', views.currentnotes, name='currentnotes'),
+    path('completed/', views.completednotes, name='completednotes'),
+    path('note/<int:note_pk>', views.viewnote, name='viewnote'),
+    path('note/<int:note_pk>/complete', views.completenote, name='completenote'),   
+    path('note/<int:note_pk>/delete', views.deletenote, name='deletenote'),       
+             
     
 ]
