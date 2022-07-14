@@ -1,22 +1,19 @@
 {% extends 'listapp/base.html' %}
-
 {% block content %}
-
-Completed
-
-<ul>
-    {% for note in notes %}
-    <li>
-        <a href="{% url 'viewnote' note.id %}">
-            {% if note.important %}<b>{% endif %}
-            {{ note.title }}
-            {% if note.important %}</b>{% endif %}
-            {% if note.memo %} - {{ note.memo }}{% endif %}
-            {{ note.datecompleted|date:'M j Y H:i' }} 
-        </a>
-    </li>
-    {% endfor %}
-</ul>
-
-
+<div class="row justify-content-center mt-5">
+  <div class="col-md-10">
+    <h1>Completed Notes</h1>
+  </div>
+</div>
+<div class="row justify-content-center mt-5">
+  <div class="col-md-10">
+    <div class="list-group">
+      {% for note in notes %}
+      <a href="{% url 'viewnote' note.id %}" class="list-group-item list-group-item-action list-group-item-warning
+      {% if note.important %} list-group-item-danger {% endif %}"><b>{{ note.title }}</b> - Completed
+        {{ note.datecompleted|date:'M j Y H:i' }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% endblock content %}

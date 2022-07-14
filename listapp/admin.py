@@ -5,4 +5,3 @@ class ListifyAdmin(admin.ModelAdmin):
     readonly_fields = ('created',)
 
 admin.site.register(Listify, ListifyAdmin)
- 

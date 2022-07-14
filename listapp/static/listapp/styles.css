@@ -1,0 +1,25 @@
+.titlefont{
+    font-family: 'Poiret One', cursive;
+}
+.point {
+	font-size: 20pt;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo span {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar {
+  flex-wrap: nowrap;
+  min-width: 600px;
+}
