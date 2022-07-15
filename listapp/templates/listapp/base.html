@@ -44,14 +44,12 @@
         {% if user.is_authenticated %}
         <form class="mb-0" action="{% url 'logoutuser' %}" method="POST">
           {% csrf_token %}
-          <div>
           <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             {{ user.username }}
           </button>
           <ul class=" bg-dark dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li><button type="submit" class=" bg-dark text-white dropdown-item">logout</button></li>
           </ul>
-        </div>
         </form>
         {% else %}
         <a href="{% url 'signupuser' %}">
